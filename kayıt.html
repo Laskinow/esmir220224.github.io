@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kayıt Ol - Joystix Zone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ÜST MENÜ -->
+  <header class="topbar">
+    <div class="logo">
+      <a href="index.html">Joystix Zone</a>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Ürün ara..." />
+      <button class="search-btn">🔍</button>
+    </div>
+    <nav class="nav-links">
+      <a href="kategoriler.html">Kategoriler</a>
+      <a href="hakkımızda.html">Hakkımızda</a>
+    </nav>
+    <div class="user-actions">
+      <a href="giris.html">Giriş</a>
+      <a href="kayıt.html">Kayıt Ol</a>
+      <a href="#" id="cart-icon">🛒 Sepet (<span id="cart-count">0</span>)</a>
+    </div>
+  </header>
+
+  <!-- GELİŞMİŞ SEPET POPUP -->
+  <div class="cart-popup" id="cart-popup">
+    <div class="cart-header">
+      <h3>Sepetim</h3>
+      <button id="close-cart">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <!-- Sepet öğeleri buraya eklenecek -->
+    </div>
+    <div class="cart-summary">
+      <div class="cart-summary-row">
+        <span>Ara Toplam:</span>
+        <span id="cart-subtotal">0₺</span>
+      </div>
+      <div class="cart-summary-row">
+        <span>Kargo:</span>
+        <span id="cart-shipping">0₺</span>
+      </div>
+      <div class="cart-summary-row discount">
+        <span>İndirim:</span>
+        <span id="cart-discount">0₺</span>
+      </div>
+      <div class="cart-summary-row total">
+        <span>Toplam:</span>
+        <span id="cart-total">0₺</span>
+      </div>
+    </div>
+    <div class="cart-coupon">
+      <input type="text" id="coupon-code" placeholder="İndirim kodu girin">
+      <button id="apply-coupon">Uygula</button>
+    </div>
+    <div class="cart-actions">
+      <button class="clear-cart-btn" id="clear-cart">Sepeti Temizle</button>
+      <button class="view-cart-btn" id="view-cart">Sepeti Görüntüle</button>
+      <button class="checkout-btn">Ödeme Yap</button>
+    </div>
+  </div>
+
+  <!-- KAYIT FORMU -->
+  <div class="auth-container">
+    <div class="auth-form-container">
+      <div class="auth-header">
+        <h1>Kayıt Ol</h1>
+        <p>Joystix Zone'a üye olarak avantajlardan yararlanın</p>
+      </div>
+      
+      <form class="auth-form" id="register-form">
+        <div class="form-group">
+          <label for="fullname">Ad Soyad</label>
+          <input type="text" id="fullname" name="fullname" placeholder="Adınız ve soyadınızı girin" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">E-posta Adresi</label>
+          <input type="email" id="email" name="email" placeholder="E-posta adresinizi girin" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="phone">Telefon Numarası</label>
+          <input type="tel" id="phone" name="phone" placeholder="Telefon numaranızı girin" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Şifre</label>
+          <input type="password" id="password" name="password" placeholder="Şifrenizi girin" required>
+          <div class="password-strength">
+            <div class="strength-bar">
+              <div class="strength-indicator" id="strength-indicator"></div>
+            </div>
+            <span class="strength-text" id="strength-text">Şifre gücü: Zayıf</span>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="password-confirm">Şifre Tekrar</label>
+          <input type="password" id="password-confirm" name="password-confirm" placeholder="Şifrenizi tekrar girin" required>
+        </div>
+        
+        <div class="form-options">
+          <div class="terms-check">
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms"><a href="#">Kullanım koşullarını</a> ve <a href="#">gizlilik politikasını</a> kabul ediyorum</label>
+          </div>
+        </div>
+        
+        <div class="form-options">
+          <div class="newsletter-check">
+            <input type="checkbox" id="newsletter" name="newsletter">
+            <label for="newsletter">Kampanya ve fırsatlardan haberdar olmak istiyorum</label>
+          </div>
+        </div>
+        
+        <button type="submit" class="auth-button">Kayıt Ol</button>
+      </form>
+      
+      <div class="social-login">
+        <p>Veya şununla kayıt olun:</p>
+        <div class="social-buttons">
+          <button class="social-button google">Google</button>
+          <button class="social-button facebook">Facebook</button>
+        </div>
+      </div>
+      
+      <div class="auth-footer">
+        <p>Zaten hesabınız var mı? <a href="giris.html">Giriş Yap</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Joystix Zone</h3>
+        <p>Türkiye'nin en büyük oyun ekipmanları ve konsol mağazası. En yeni ürünleri en uygun fiyatlarla sunuyoruz.</p>
+        <div class="social-icons">
+          <a href="#" class="social-icon">📱</a>
+          <a href="#" class="social-icon">📘</a>
+          <a href="#" class="social-icon">📸</a>
+          <a href="#" class="social-icon">📺</a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Hızlı Erişim</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li><a href="kategoriler.html">Kategoriler</a></li>
+          <li><a href="konsollar.html">Konsollar</a></li>
+          <li><a href="konsoloyun.html">Konsol Oyunları</a></li>
+          <li><a href="konsolekipman.html">Konsol Ekipmanları</a></li>
+          <li><a href="hakkımızda.html">Hakkımızda</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Müşteri Hizmetleri</h3>
+        <ul class="footer-links">
+          <li><a href="#">Sıkça Sorulan Sorular</a></li>
+          <li><a href="#">Kargo ve Teslimat</a></li>
+          <li><a href="#">İade ve Değişim</a></li>
+          <li><a href="#">Gizlilik Politikası</a></li>
+          <li><a href="#">Kullanım Koşulları</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>İletişim</h3>
+        <p>📍 Teknoloji Caddesi No:123, İstanbul</p>
+        <p>📞 0212 123 45 67</p>
+        <p>✉️ info@joystixzone.com</p>
+        <div class="payment-methods">
+          <span class="payment-icon">💳</span>
+          <span class="payment-icon">💰</span>
+          <span class="payment-icon">🏦</span>
+          <span class="payment-icon">💵</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2023 Joystix Zone. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Sepet işlevleri
+      const cartIcon = document.getElementById('cart-icon');
+      const cartPopup = document.getElementById('cart-popup');
+      const closeCart = document.getElementById('close-cart');
+      const cartItems = document.getElementById('cart-items');
+      const cartCount = document.getElementById('cart-count');
+      const cartSubtotal = document.getElementById('cart-subtotal');
+      const cartShipping = document.getElementById('cart-shipping');
+      const cartDiscount = document.getElementById('cart-discount');
+      const cartTotal = document.getElementById('cart-total');
+      const clearCartBtn = document.getElementById('clear-cart');
+      const viewCartBtn = document.getElementById('view-cart');
+      const couponInput = document.getElementById('coupon-code');
+      const applyCouponBtn = document.getElementById('apply-coupon');
+      
+      // Sepet verilerini saklamak için
+      let cart = [];
+      let couponApplied = false;
+      let discountAmount = 0;
+      
+      function loadCart() {
+        const savedCart = localStorage.getItem('joystixCart');
+        if (savedCart) {
+          cart = JSON.parse(savedCart);
+          updateCartDisplay();
+        }
+      }
+      
+      function saveCart() {
+        localStorage.setItem('joystixCart', JSON.stringify(cart));
+      }
+      
+      function updateCartDisplay() {
+        cartCount.textContent = cart.length;
+        cartItems.innerHTML = '';
+        
+        let subtotal = 0;
+        
+        if (cart.length === 0) {
+          cartItems.innerHTML = '<p style="padding: 15px; text-align: center;">Sepetiniz boş</p>';
+          cartSubtotal.textContent = formatPrice(0);
+          cartShipping.textContent = formatPrice(0);
+          cartDiscount.textContent = formatPrice(0);
+          cartTotal.textContent = formatPrice(0);
+          return;
+        }
+        
+        cart.forEach((item, index) => {
+          const cartItem = document.createElement('div');
+          cartItem.className = 'cart-item';
+          cartItem.innerHTML = `
+            <img src="${item.image}" alt="${item.title}" class="cart-item-image">
+            <div class="cart-item-details">
+              <div class="cart-item-title">${item.title}</div>
+              <div class="cart-item-price">${formatPrice(item.price)}</div>
+              <div class="cart-item-quantity">
+                <button class="quantity-btn minus" data-index="${index}">-</button>
+                <span class="quantity">${item.quantity || 1}</span>
+                <button class="quantity-btn plus" data-index="${index}">+</button>
+              </div>
+            </div>
+            <button class="cart-item-remove" data-index="${index}">✕</button>
+          `;
+          cartItems.appendChild(cartItem);
+          
+          subtotal += item.price * (item.quantity || 1);
+        });
+        
+        // Miktar butonları için olay dinleyicileri
+        document.querySelectorAll('.quantity-btn.minus').forEach(button => {
+          button.addEventListener('click', function() {
+            const index = parseInt(this.getAttribute('data-index'));
+            if (cart[index].quantity > 1) {
+              cart[index].quantity--;
+              saveCart();
+              updateCartDisplay();
+            }
+          });
+        });
+        
+        document.querySelectorAll('.quantity-btn.plus').forEach(button => {
+          button.addEventListener('click', function() {
+            const index = parseInt(this.getAttribute('data-index'));
+            cart[index].quantity = (cart[index].quantity || 1) + 1;
+            saveCart();
+            updateCartDisplay();
+          });
+        });
+        
+        document.querySelectorAll('.cart-item-remove').forEach(button => {
+          button.addEventListener('click', function() {
+            removeFromCart(parseInt(this.getAttribute('data-index')));
+          });
+        });
+        
+        // Kargo ücreti hesaplama
+        let shippingCost = subtotal > 5000 ? 0 : 49.90;
+        
+        // İndirim hesaplama
+        if (couponApplied) {
+          discountAmount = subtotal * 0.1; // %10 indirim
+        } else {
+          discountAmount = 0;
+        }
+        
+        // Toplam hesaplama
+        const total = subtotal + shippingCost - discountAmount;
+        
+        cartSubtotal.textContent = formatPrice(subtotal);
+        cartShipping.textContent = shippingCost === 0 ? 'Ücretsiz' : formatPrice(shippingCost);
+        cartDiscount.textContent = formatPrice(discountAmount);
+        cartTotal.textContent = formatPrice(total);
+      }
+      
+      function formatPrice(price) {
+        return new Intl.NumberFormat('tr-TR', { style: 'currency', currency: 'TRY' }).format(price);
+      }
+      
+      function removeFromCart(index) {
+        cart.splice(index, 1);
+        saveCart();
+        updateCartDisplay();
+      }
+      
+      function clearCart() {
+        cart = [];
+        couponApplied = false;
+        saveCart();
+        updateCartDisplay();
+      }
+      
+      // Kupon kodu uygulama
+      applyCouponBtn.addEventListener('click', function() {
+        const couponCode = couponInput.value.trim().toUpperCase();
+        if (couponCode === 'JOYSTIX10') {
+          couponApplied = true;
+          updateCartDisplay();
+          showNotification('İndirim kodu başarıyla uygulandı!', 'success');
+        } else {
+          showNotification('Geçersiz indirim kodu!', 'error');
+        }
+      });
+      
+      // Bildirim gösterme fonksiyonu
+      function showNotification(message, type) {
+        const notification = document.createElement('div');
+        notification.className = `notification ${type}`;
+        notification.textContent = message;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+          notification.classList.add('show');
+        }, 10);
+        
+        setTimeout(() => {
+          notification.classList.remove('show');
+          setTimeout(() => {
+            document.body.removeChild(notification);
+          }, 300);
+        }, 3000);
+      }
+      
+      // Sepeti görüntüle butonu
+      viewCartBtn.addEventListener('click', function() {
+        window.location.href = 'sepet.html';
+      });
+      
+      // Olay dinleyicileri
+      cartIcon.addEventListener('click', function(e) {
+        e.preventDefault();
+        cartPopup.style.display = cartPopup.style.display === 'block' ? 'none' : 'block';
+      });
+      
+      closeCart.addEventListener('click', function() {
+        cartPopup.style.display = 'none';
+      });
+      
+      clearCartBtn.addEventListener('click', clearCart);
+      
+      document.addEventListener('click', function(e) {
+        if (!cartPopup.contains(e.target) && e.target !== cartIcon) {
+          cartPopup.style.display = 'none';
+        }
+      });
+      
+      // Şifre gücü kontrolü
+      const passwordInput = document.getElementById('password');
+      const strengthIndicator = document.getElementById('strength-indicator');
+      const strengthText = document.getElementById('strength-text');
+      
+      if (passwordInput) {
+        passwordInput.addEventListener('input', function() {
+          const password = this.value;
+          let strength = 0;
+          
+          if (password.length >= 8) strength += 1;
+          if (password.match(/[a-z]/) && password.match(/[A-Z]/)) strength += 1;
+          if (password.match(/\d/)) strength += 1;
+          if (password.match(/[^a-zA-Z\d]/)) strength += 1;
+          
+          switch (strength) {
+            case 0:
+              strengthIndicator.style.width = '0%';
+              strengthIndicator.style.backgroundColor = '#ff4d4d';
+              strengthText.textContent = 'Şifre gücü: Çok Zayıf';
+              break;
+            case 1:
+              strengthIndicator.style.width = '25%';
+              strengthIndicator.style.backgroundColor = '#ff4d4d';
+              strengthText.textContent = 'Şifre gücü: Zayıf';
+              break;
+            case 2:
+              strengthIndicator.style.width = '50%';
+              strengthIndicator.style.backgroundColor = '#ffaa00';
+              strengthText.textContent = 'Şifre gücü: Orta';
+              break;
+            case 3:
+              strengthIndicator.style.width = '75%';
+              strengthIndicator.style.backgroundColor = '#2bd965';
+              strengthText.textContent = 'Şifre gücü: İyi';
+              break;
+            case 4:
+              strengthIndicator.style.width = '100%';
+              strengthIndicator.style.backgroundColor = '#00ffe7';
+              strengthText.textContent = 'Şifre gücü: Mükemmel';
+              break;
+          }
+        });
+      }
+      
+      // Kayıt formu gönderimi
+      const registerForm = document.getElementById('register-form');
+      if (registerForm) {
+        registerForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          const password = document.getElementById('password').value;
+          const passwordConfirm = document.getElementById('password-confirm').value;
+          
+          if (password !== passwordConfirm) {
+            showNotification('Şifreler eşleşmiyor!', 'error');
+            return;
+          }
+          
+          // Normalde burada bir API'ye istek atılır, şimdilik localStorage'a kaydedelim
+          const userData = {
+            fullname: document.getElementById('fullname').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value
+          };
+          
+          localStorage.setItem('joystixUser', JSON.stringify(userData));
+          showNotification('Kayıt başarılı! Giriş sayfasına yönlendiriliyorsunuz.', 'success');
+          
+          setTimeout(() => {
+            window.location.href = 'giris.html';
+          }, 2000);
+        });
+      }
+      
+      // Sayfa yüklendiğinde sepeti yükle
+      loadCart();
+    });
+  </script>
+</body>
+</html>

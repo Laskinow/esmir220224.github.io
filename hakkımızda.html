@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hakkımızda - Joystix Zone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ÜST MENÜ -->
+  <header class="topbar">
+    <div class="logo">
+      <a href="index.html">Joystix Zone</a>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Ürün ara..." />
+      <button class="search-btn">🔍</button>
+    </div>
+    <nav class="nav-links">
+      <a href="kategoriler.html">Kategoriler</a>
+      <a href="hakkımızda.html">Hakkımızda</a>
+    </nav>
+    <div class="user-actions">
+      <a href="giris.html">Giriş</a>
+      <a href="kayıt.html">Kayıt Ol</a>
+      <a href="#" id="cart-icon">🛒 Sepet (<span id="cart-count">0</span>)</a>
+    </div>
+  </header>
+
+  <!-- SEPET POPUP -->
+  <div class="cart-popup" id="cart-popup">
+    <div class="cart-header">
+      <h3>Sepetim</h3>
+      <button id="close-cart">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <!-- Sepet öğeleri buraya eklenecek -->
+    </div>
+    <div class="cart-total">
+      Toplam: <span id="cart-total">0₺</span>
+    </div>
+    <div class="cart-actions">
+      <button class="clear-cart-btn" id="clear-cart">Sepeti Temizle</button>
+      <button class="checkout-btn">Ödeme Yap</button>
+    </div>
+  </div>
+
+  <!-- SAYFA İÇERİĞİ -->
+  <div class="page-container">
+    <div class="page-header">
+      <h1>Hakkımızda</h1>
+      <p>Joystix Zone'u daha yakından tanıyın</p>
+    </div>
+
+    <div class="about-content">
+      <div class="about-section">
+        <h2>Biz Kimiz?</h2>
+        <p>Joystix Zone, 2025 yılında oyun tutkunları tarafından kurulmuş, Türkiye'nin önde gelen oyun ekipmanları ve konsol mağazasıdır. Amacımız, oyunseverlere en kaliteli ürünleri en uygun fiyatlarla sunmak ve mükemmel bir alışveriş deneyimi yaşatmaktır.</p>
+        
+        <p>Şirketimiz, İstanbul merkezli olup, Türkiye'nin dört bir yanına hizmet vermektedir. Geniş ürün yelpazemiz, profesyonel ekibimiz ve müşteri memnuniyetine verdiğimiz önem ile sektörde fark yaratmaktayız.</p>
+      </div>
+
+      <div class="about-image">
+        <img src="img/dükkan.png" alt="Joystix Zone Mağaza" class="about-img">
+      </div>
+
+      <div class="about-section">
+        <h2>Misyonumuz</h2>
+        <p>Joystix Zone olarak misyonumuz, oyun dünyasındaki en son teknolojileri ve ürünleri müşterilerimizle buluşturmak, onlara güvenilir ve kaliteli bir alışveriş deneyimi sunmaktır. Her zaman müşteri memnuniyetini ön planda tutarak, satış öncesi ve sonrası destek hizmetlerimizle fark yaratmayı hedefliyoruz.</p>
+      </div>
+
+      <div class="about-section">
+        <h2>Vizyonumuz</h2>
+        <p>Vizyonumuz, Türkiye'nin ve bölgenin en büyük ve en güvenilir oyun ekipmanları ve konsol satıcısı olmaktır. Teknolojik gelişmeleri yakından takip ederek, müşterilerimize her zaman en yeni ve en kaliteli ürünleri sunmayı amaçlıyoruz.</p>
+      </div>
+
+      <div class="about-stats">
+        <div class="stat-item">
+          <div class="stat-number">100+</div>
+          <div class="stat-text">Ürün Çeşidi</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">5.000+</div>
+          <div class="stat-text">Mutlu Müşteri</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1</div>
+          <div class="stat-text">Yıllık Deneyim</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">7/24</div>
+          <div class="stat-text">Müşteri Desteği</div>
+        </div>
+      </div>
+
+      <div class="about-section">
+        <h2>Ekibimiz</h2>
+        <p>Joystix Zone'da, oyun dünyasına tutkuyla bağlı, alanında uzman bir ekip çalışmaktadır. Ekibimiz, müşterilerimize en iyi hizmeti sunmak için sürekli olarak kendini geliştirmekte ve sektördeki yenilikleri takip etmektedir.</p>
+      </div>
+
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="img/team-1.webp" alt="Takım Üyesi" class="team-img">
+          <h3>Miraç Recep</h3>
+          <p>Kurucu & CEO</p>
+        </div>
+      </div>
+
+      <div class="about-section">
+        <h2>Neden Bizi Tercih Etmelisiniz?</h2>
+        <ul class="about-list">
+          <li>Geniş ürün yelpazesi</li>
+          <li>Rekabetçi fiyatlar</li>
+          <li>Hızlı ve güvenli teslimat</li>
+          <li>Profesyonel müşteri hizmetleri</li>
+          <li>Kolay iade ve değişim politikası</li>
+          <li>Orijinal ve garantili ürünler</li>
+        </ul>
+      </div>
+
+      <div class="about-contact">
+        <h2>Bize Ulaşın</h2>
+        <p>Sorularınız veya önerileriniz için bizimle iletişime geçebilirsiniz:</p>
+        <div class="contact-info">
+          <p>📍 Teknoloji Caddesi No:123, İstanbul</p>
+          <p>📞 0212 123 45 67</p>
+          <p>✉️ info@joystixzone.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Joystix Zone</h3>
+        <p>Türkiye'nin en büyük oyun ekipmanları ve konsol mağazası. En yeni ürünleri en uygun fiyatlarla sunuyoruz.</p>
+        <div class="social-icons">
+          <a href="#" class="social-icon">📱</a>
+          <a href="#" class="social-icon">📘</a>
+          <a href="#" class="social-icon">📸</a>
+          <a href="#" class="social-icon">📺</a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Hızlı Erişim</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li><a href="kategoriler.html">Kategoriler</a></li>
+          <li><a href="konsollar.html">Konsollar</a></li>
+          <li><a href="konsoloyun.html">Konsol Oyunları</a></li>
+          <li><a href="konsolekipman.html">Konsol Ekipmanları</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Müşteri Hizmetleri</h3>
+        <ul class="footer-links">
+          <li><a href="#">Sıkça Sorulan Sorular</a></li>
+          <li><a href="#">Kargo ve Teslimat</a></li>
+          <li><a href="#">İade ve Değişim</a></li>
+          <li><a href="#">Gizlilik Politikası</a></li>
+          <li><a href="#">Kullanım Koşulları</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>İletişim</h3>
+        <p>📍 Teknoloji Caddesi No:123, İstanbul</p>
+        <p>📞 0212 123 45 67</p>
+        <p>✉️ info@joystixzone.com</p>
+        <div class="payment-methods">
+          <span class="payment-icon">💳</span>
+          <span class="payment-icon">💰</span>
+          <span class="payment-icon">🏦</span>
+          <span class="payment-icon">💵</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2023 Joystix Zone. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

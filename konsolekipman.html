@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konsol Ekipmanları - Joystix Zone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ÜST MENÜ -->
+<header class="topbar">
+  <div class="logo">
+    <a href="index.html">Joystix Zone</a>
+  </div>
+  <div class="search-bar">
+    <input type="text" id="search-input" placeholder="Ürün ara..." />
+    <button class="search-btn">🔍</button>
+  </div>
+  <nav class="nav-links">
+    <a href="kategoriler.html">Kategoriler</a>
+    <a href="hakkımızda.html">Hakkımızda</a>
+  </nav>
+  <div class="user-actions">
+    <a href="giris.html">Giriş</a>
+    <a href="kayıt.html">Kayıt Ol</a>
+    <a href="#" id="cart-icon">🛒 Sepet (<span id="cart-count">0</span>)</a>
+  </div>
+</header>
+
+  <!-- SEPET POPUP -->
+  <div class="cart-popup" id="cart-popup">
+    <div class="cart-header">
+      <h3>Sepetim</h3>
+      <button id="close-cart">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <!-- Sepet öğeleri buraya eklenecek -->
+    </div>
+    <div class="cart-summary">
+      <div class="cart-summary-row">
+        <span>Ara Toplam:</span>
+        <span id="cart-subtotal">0₺</span>
+      </div>
+      <div class="cart-summary-row">
+        <span>Kargo:</span>
+        <span id="cart-shipping">0₺</span>
+      </div>
+      <div class="cart-summary-row discount">
+        <span>İndirim:</span>
+        <span id="cart-discount">0₺</span>
+      </div>
+      <div class="cart-summary-row total">
+        <span>Toplam:</span>
+        <span id="cart-total">0₺</span>
+      </div>
+    </div>
+    <div class="cart-coupon">
+      <input type="text" id="coupon-code" placeholder="İndirim kodu girin">
+      <button id="apply-coupon">Uygula</button>
+    </div>
+    <div class="cart-actions">
+      <button class="clear-cart-btn" id="clear-cart">Sepeti Temizle</button>
+      <button class="view-cart-btn" id="view-cart">Sepeti Görüntüle</button>
+      <button class="checkout-btn">Ödeme Yap</button>
+    </div>
+  </div>
+  <!-- SOL MENÜ -->
+  <div class="sidebar">
+    <h2>Joystix Zone</h2>
+
+    <div class="category-block">
+      <h3 class="main-category">🎮 Konsol</h3>
+      <div class="subcategories show">
+        <a href="konsollar.html">Konsollar</a>
+        <a href="konsoloyun.html">Konsol Oyunları</a>
+        <a href="konsolekipman.html" class="active">Konsol Ekipmanları</a>
+      </div>
+    </div>
+
+    <div class="category-block">
+      <h3 class="main-category">💻 Bilgisayar</h3>
+      <div class="subcategories show">
+        <a href="hazırsistem.html">Hazır Sistemler</a>
+        <a href="laptop.html">Laptop</a>
+        <a href="monitör.html" class="active">Monitörler</a>
+        <a href="ekrankartı.html">Ekran Kartları</a>
+        <a href="anakart.html">Ana Kartlar</a>
+        <a href="işlemci.html">İşlemciler</a>
+        <a href="ram.html">Ram</a>
+        <a href="SSD.html">SSD</a>
+        <a href="HDD.html">HDD</a>
+      </div>
+    </div>
+
+    <div class="category-block">
+      <h3 class="main-category">🕹️ Aksesuarlar</h3>
+      <div class="subcategories show">
+        <a href="kulaklık.html" class="active">Gaming Kulaklık</a>
+        <a href="mouse.html">Gaming Mouse</a>
+        <a href="klavye.html">Gaming Klavyeler</a>
+        <a href="gamepad.html">Gamepadler</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ÜRÜNLER -->
+  <div class="product-wrapper">
+    <div class="category-title">
+      <h1>Konsol Ekipmanları</h1>
+      <p>Oyun deneyiminizi zenginleştirecek ekipmanlar</p>
+    </div>
+    
+    <div class="product-container" id="product-container">
+      <div class="product-card" data-images='["img/ps5-controller.webp", "img/ps5-controller-2.webp", "img/ps5-controller-3.webp"]' data-price="1499" data-name="PlayStation 5 DualSense Controller">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/ps5-controller.webp" alt="PS5 Controller" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">PlayStation 5 DualSense Controller</div>
+        <div class="price">1.499₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+
+      <div class="product-card" data-images='["img/xbox-controller.webp", "img/xbox-controller-2.webp", "img/xbox-controller-3.webp"]' data-price="1399" data-name="Xbox Series X Controller">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/xbox-controller.webp" alt="Xbox Controller" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">Xbox Series X Controller</div>
+        <div class="price">1.399₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+
+      <div class="product-card" data-images='["img/ps5-headset.webp", "img/ps5-headset-2.webp", "img/ps5-headset-3.webp"]' data-price="2499" data-name="PlayStation 5 Pulse 3D Wireless Headset">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/ps5-headset.webp" alt="PS5 Headset" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">PlayStation 5 Pulse 3D Wireless Headset</div>
+        <div class="price">2.499₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+
+      <div class="product-card" data-images='["img/ps5-charging.webp", "img/ps5-charging-2.webp", "img/ps5-charging-3.webp"]' data-price="699" data-name="PlayStation 5 DualSense Charging Station">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/ps5-charging.webp" alt="PS5 Charging Station" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">PlayStation 5 DualSense Charging Station</div>
+        <div class="price">699₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+      
+      <div class="product-card" data-images='["img/xbox-headset.webp", "img/xbox-headset-2.webp", "img/xbox-headset-3.webp", "img/xbox-headset-4.webp"]' data-price="1999" data-name="Xbox Wireless Headset">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/xbox-headset.webp" alt="Xbox Headset" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">Xbox Wireless Headset</div>
+        <div class="price">7.999₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+      
+      <div class="product-card" data-images='["img/switch-pro.webp", "img/switch-pro-2.webp"]' data-price="1299" data-name="Nintendo Switch Pro Controller">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/switch-pro.webp" alt="Switch Pro Controller" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">Nintendo Switch Pro Controller</div>
+        <div class="price">1.299₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+      
+      <div class="product-card" data-images='["img/ps5-camera.webp"]' data-price="899" data-name="PlayStation 5 HD Camera">
+        <div class="product-image-container">
+          <img src="img/ps5-camera.webp" alt="PS5 Camera" class="product-image">
+        </div>
+        <div class="product-title">PlayStation 5 HD Camera</div>
+        <div class="price">899₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+      
+      <div class="product-card" data-images='["img/xbox-storage.jpg", "img/xbox-storage-2.jpg", "img/xbox-storage-3.jpg"]' data-price="3499" data-name="Xbox Series X Seagate Storage Expansion Card">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/xbox-storage.webp" alt="Xbox Storage" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">Xbox Series X Seagate Storage Expansion Card</div>
+        <div class="price">3.499₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Joystix Zone</h3>
+        <p>Türkiye'nin en büyük oyun ekipmanları ve konsol mağazası. En yeni ürünleri en uygun fiyatlarla sunuyoruz.</p>
+        <div class="social-icons">
+          <a href="#" class="social-icon">📱</a>
+          <a href="#" class="social-icon">📘</a>
+          <a href="#" class="social-icon">📸</a>
+          <a href="#" class="social-icon">📺</a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Hızlı Erişim</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li><a href="konsollar.html">Konsollar</a></li>
+          <li><a href="konsoloyun.html">Konsol Oyunları</a></li>
+          <li><a href="konsolekipman.html">Konsol Ekipmanları</a></li>
+          <li><a href="#">Kampanyalar</a></li>
+          <li><a href="#">Hakkımızda</a></li>
+          <li><a href="#">İletişim</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Müşteri Hizmetleri</h3>
+        <ul class="footer-links">
+          <li><a href="#">Sıkça Sorulan Sorular</a></li>
+          <li><a href="#">Kargo ve Teslimat</a></li>
+          <li><a href="#">İade ve Değişim</a></li>
+          <li><a href="#">Gizlilik Politikası</a></li>
+          <li><a href="#">Kullanım Koşulları</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>İletişim</h3>
+        <p>📍 Teknoloji Caddesi No:123, İstanbul</p>
+        <p>📞 0212 123 45 67</p>
+        <p>✉️ info@joystixzone.com</p>
+        <div class="payment-methods">
+          <span class="payment-icon">💳</span>
+          <span class="payment-icon">💰</span>
+          <span class="payment-icon">🏦</span>
+          <span class="payment-icon">💵</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2023 Joystix Zone. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>

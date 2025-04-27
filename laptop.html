@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laptop - Joystix Zone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ÜST MENÜ -->
+  <header class="topbar">
+    <div class="logo">
+      <a href="index.html">Joystix Zone</a>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Ürün ara..." />
+      <button class="search-btn">🔍</button>
+    </div>
+    <nav class="nav-links">
+      <a href="kategoriler.html">Kategoriler</a>
+      <a href="hakkımızda.html">Hakkımızda</a>
+    </nav>
+    <div class="user-actions">
+      <a href="giris.html">Giriş</a>
+      <a href="kayıt.html">Kayıt Ol</a>
+      <a href="#" id="cart-icon">🛒 Sepet (<span id="cart-count">0</span>)</a>
+    </div>
+  </header>
+
+  <!-- SEPET POPUP -->
+  <div class="cart-popup" id="cart-popup">
+    <div class="cart-header">
+      <h3>Sepetim</h3>
+      <button id="close-cart">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <!-- Sepet öğeleri buraya eklenecek -->
+    </div>
+    <div class="cart-summary">
+      <div class="cart-summary-row">
+        <span>Ara Toplam:</span>
+        <span id="cart-subtotal">0₺</span>
+      </div>
+      <div class="cart-summary-row">
+        <span>Kargo:</span>
+        <span id="cart-shipping">0₺</span>
+      </div>
+      <div class="cart-summary-row discount">
+        <span>İndirim:</span>
+        <span id="cart-discount">0₺</span>
+      </div>
+      <div class="cart-summary-row total">
+        <span>Toplam:</span>
+        <span id="cart-total">0₺</span>
+      </div>
+    </div>
+    <div class="cart-coupon">
+      <input type="text" id="coupon-code" placeholder="İndirim kodu girin">
+      <button id="apply-coupon">Uygula</button>
+    </div>
+    <div class="cart-actions">
+      <button class="clear-cart-btn" id="clear-cart">Sepeti Temizle</button>
+      <button class="view-cart-btn" id="view-cart">Sepeti Görüntüle</button>
+      <button class="checkout-btn">Ödeme Yap</button>
+    </div>
+  </div>
+
+  <!-- SOL MENÜ -->
+  <div class="sidebar">
+    <h2>Joystix Zone</h2>
+
+    <div class="category-block">
+      <h3 class="main-category">🎮 Konsol</h3>
+      <div class="subcategories">
+        <a href="konsollar.html">Konsollar</a>
+        <a href="konsoloyun.html">Konsol Oyunları</a>
+        <a href="konsolekipman.html">Konsol Ekipmanları</a>
+      </div>
+    </div>
+
+    <div class="category-block">
+      <h3 class="main-category">💻 Bilgisayar</h3>
+      <div class="subcategories show">
+        <a href="hazırsistem.html">Hazır Sistemler</a>
+        <a href="laptop.html" class="active">Laptop</a>
+        <a href="monitör.html">Monitörler</a>
+        <a href="ekrankartı.html">Ekran Kartları</a>
+        <a href="anakart.html">Ana Kartlar</a>
+        <a href="işlemci.html">İşlemciler</a>
+        <a href="ram.html">Ram</a>
+        <a href="SSD.html">SSD</a>
+        <a href="HDD.html">HDD</a>
+      </div>
+    </div>
+
+    <div class="category-block">
+        <h3 class="main-category">🕹️ Aksesuarlar</h3>
+        <div class="subcategories show">
+          <a href="kulaklık.html" class="active">Gaming Kulaklık</a>
+          <a href="mouse.html">Gaming Mouse</a>
+          <a href="klavye.html">Gaming Klavyeler</a>
+          <a href="gamepad.html">Gamepadler</a>
+        </div>
+    </div>
+  </div>
+
+  <!-- ÜRÜNLER -->
+  <div class="product-wrapper">
+    <div class="category-title">
+      <h1>Laptop</h1>
+      <p>Oyun ve profesyonel kullanım için dizüstü bilgisayarlar</p>
+    </div>
+    
+    <div class="product-container" id="product-container">
+      <div class="product-card" data-images='["img/laptop1.jpg", "img/laptop1-1.jpg", "img/laptop1-2.jpg"]' data-price="34999" data-name="MSI Raider GE78 HX">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/laptop1.jpg" alt="MSI Raider GE78 HX" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">MSI Raider GE78 HX</div>
+        <div class="product-specs">Intel i9-13980HX, RTX 4090, 32GB RAM, 2TB SSD, 17" QHD 240Hz</div>
+        <div class="price">34.999₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+
+      <div class="product-card" data-images='["img/laptop2.jpg", "img/laptop2-1.jpg", "img/laptop2-2.jpg"]' data-price="24999" data-name="ASUS ROG Strix G16">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/laptop2.jpg" alt="ASUS ROG Strix G16" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">ASUS ROG Strix G16</div>
+        <div class="product-specs">Intel i7-13650HX, RTX 4070, 16GB RAM, 1TB SSD, 16" QHD 165Hz</div>
+        <div class="price">24.999₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+      
+      <div class="product-card" data-images='["img/laptop3.jpg", "img/laptop3-1.jpg", "img/laptop3-2.jpg"]' data-price="19999" data-name="Lenovo YOGA">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/laptop3.jpg" alt="Lenovo YOGA" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">Lenovo YOGA</div>
+        <div class="product-specs">AMD Ryzen 7 7745HX, RTX 4060, 16GB RAM, 1TB SSD, 16" QHD 165Hz</div>
+        <div class="price">19.999₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+
+      <div class="product-card" data-images='["img/laptop4.jpg", "img/laptop4-1.jpg", "img/laptop4-2.jpg"]' data-price="14999" data-name="HP Victus 16">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/laptop4.jpg" alt="HP Victus 16" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">HP Victus 16</div>
+        <div class="product-specs">Intel i5-13500H, RTX 3050, 16GB RAM, 512GB SSD, 16" FHD 144Hz</div>
+        <div class="price">14.999₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+
+      <div class="product-card" data-images='["img/laptop5.jpg", "img/laptop5-1.jpg", "img/laptop5-2.jpg"]' data-price="9999" data-name="Acer Aspire 5">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/laptop5.jpg" alt="Acer Aspire 5" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">Acer Aspire 5</div>
+        <div class="product-specs">Intel i5-1235U, Iris Xe Graphics, 8GB RAM, 512GB SSD, 15.6" FHD</div>
+        <div class="price">9.999₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+      
+      <div class="product-card" data-images='["img/laptop6.jpg", "img/laptop6-1.jpg", "img/laptop6-2.jpg"]' data-price="7999" data-name="Lenovo IdeaPad 3">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/laptop6.jpg" alt="Lenovo IdeaPad 3" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">Lenovo IdeaPad 3</div>
+        <div class="product-specs">AMD Ryzen 5 5500U, Radeon Graphics, 8GB RAM, 256GB SSD, 15.6" FHD</div>
+        <div class="price">7.999₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Joystix Zone</h3>
+        <p>Türkiye'nin en büyük oyun ekipmanları ve konsol mağazası. En yeni ürünleri en uygun fiyatlarla sunuyoruz.</p>
+        <div class="social-icons">
+          <a href="#" class="social-icon">📱</a>
+          <a href="#" class="social-icon">📘</a>
+          <a href="#" class="social-icon">📸</a>
+          <a href="#" class="social-icon">📺</a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Hızlı Erişim</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li><a href="kategoriler.html">Kategoriler</a></li>
+          <li><a href="konsollar.html">Konsollar</a></li>
+          <li><a href="konsoloyun.html">Konsol Oyunları</a></li>
+          <li><a href="konsolekipman.html">Konsol Ekipmanları</a></li>
+          <li><a href="hakkimizda.html">Hakkımızda</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Müşteri Hizmetleri</h3>
+        <ul class="footer-links">
+          <li><a href="#">Sıkça Sorulan Sorular</a></li>
+          <li><a href="#">Kargo ve Teslimat</a></li>
+          <li><a href="#">İade ve Değişim</a></li>
+          <li><a href="#">Gizlilik Politikası</a></li>
+          <li><a href="#">Kullanım Koşulları</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>İletişim</h3>
+        <p>📍 Teknoloji Caddesi No:123, İstanbul</p>
+        <p>📞 0212 123 45 67</p>
+        <p>✉️ info@joystixzone.com</p>
+        <div class="payment-methods">
+          <span class="payment-icon">💳</span>
+          <span class="payment-icon">💰</span>
+          <span class="payment-icon">🏦</span>
+          <span class="payment-icon">💵</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2023 Joystix Zone. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

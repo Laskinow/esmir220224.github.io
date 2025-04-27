@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joystix Zone</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- ÜST MENÜ -->
+<header class="topbar">
+  <div class="logo">
+    <a href="index.html">Joystix Zone</a>
+  </div>
+  <div class="search-bar">
+    <input type="text" id="search-input" placeholder="Ürün ara..." />
+    <button class="search-btn">🔍</button>
+  </div>
+  <nav class="nav-links">
+    <a href="kategoriler.html">Kategoriler</a>
+    <a href="hakkımızda.html">Hakkımızda</a>
+  </nav>
+  <div class="user-actions">
+    <a href="giris.html">Giriş</a>
+    <a href="kayıt.html">Kayıt Ol</a>
+    <a href="#" id="cart-icon">🛒 Sepet (<span id="cart-count">0</span>)</a>
+  </div>
+</header>
+
+<div class="cart-popup" id="cart-popup">
+  <div class="cart-header">
+    <h3>Sepetim</h3>
+    <button id="close-cart">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items">
+    <!-- Sepet öğeleri buraya eklenecek -->
+  </div>
+  <div class="cart-summary">
+    <div class="cart-summary-row">
+      <span>Ara Toplam:</span>
+      <span id="cart-subtotal">0₺</span>
+    </div>
+    <div class="cart-summary-row">
+      <span>Kargo:</span>
+      <span id="cart-shipping">0₺</span>
+    </div>
+    <div class="cart-summary-row discount">
+      <span>İndirim:</span>
+      <span id="cart-discount">0₺</span>
+    </div>
+    <div class="cart-summary-row total">
+      <span>Toplam:</span>
+      <span id="cart-total">0₺</span>
+    </div>
+  </div>
+  <div class="cart-coupon">
+    <input type="text" id="coupon-code" placeholder="İndirim kodu girin">
+    <button id="apply-coupon">Uygula</button>
+  </div>
+  <div class="cart-actions">
+    <button class="clear-cart-btn" id="clear-cart">Sepeti Temizle</button>
+    <button class="view-cart-btn" id="view-cart">Sepeti Görüntüle</button>
+    <button class="checkout-btn">Ödeme Yap</button>
+  </div>
+</div>
+
+<!-- SOL MENÜ -->
+<div class="sidebar">
+  <h2>Joystix Zone</h2>
+
+  <div class="category-block">
+    <h3 class="main-category">🎮 Konsol</h3>
+    <div class="subcategories show">
+      <a href="konsollar.html">Konsollar</a>
+      <a href="konsoloyun.html">Konsol Oyunları</a>
+      <a href="konsolekipman.html">Konsol Ekipmanları</a>
+    </div>
+  </div>
+
+  <div class="category-block">
+      <h3 class="main-category">💻 Bilgisayar</h3>
+      <div class="subcategories show">
+        <a href="hazırsistem.html">Hazır Sistemler</a>
+        <a href="laptop.html">Laptop</a>
+        <a href="monitör.html" class="active">Monitörler</a>
+        <a href="ekrankartı.html">Ekran Kartları</a>
+        <a href="anakart.html">Ana Kartlar</a>
+        <a href="işlemci.html">İşlemciler</a>
+        <a href="ram.html">Ram</a>
+        <a href="SSD.html">SSD</a>
+        <a href="HDD.html">HDD</a>
+      </div>
+  </div>
+
+  <div class="category-block">
+    <h3 class="main-category">🕹️ Aksesuarlar</h3>
+    <div class="subcategories show">
+      <a href="kulaklık.html">Gaming Kulaklık</a>
+      <a href="mouse.html">Gaming Mouse</a>
+      <a href="klavye.html">Gaming Klavyeler</a>
+      <a href="gamepad.html">Gamepadler</a>
+    </div>
+  </div>
+</div>
+
+<!-- ÜRÜNLER -->
+<div class="product-wrapper">
+  <div class="category-title">
+    <h1>Tüm Ürünler</h1>
+    <p>En yeni ve popüler oyun ürünleri</p>
+  </div>
+  
+  <div class="product-container" id="product-container">
+    <!-- KONSOLLAR -->
+    <div class="product-card" data-images='["img/ps5-1.webp", "img/ps5-2.webp", "img/ps5-3.webp"]' data-price="18999" data-name="PlayStation 5">
+      <div class="product-image-container">
+        <button class="nav-arrow left">←</button>
+        <img src="img/ps5-1.webp" alt="PS5" class="product-image">
+        <button class="nav-arrow right">→</button>
+      </div>
+      <div class="product-title">PlayStation 5</div>
+      <div class="price">18.999₺</div>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+
+    <div class="product-card" data-images='["img/xbox-1.webp", "img/xbox-2.webp", "img/xbox-3.webp"]' data-price="17499" data-name="Xbox Series X">
+      <div class="product-image-container">
+        <button class="nav-arrow left">←</button>
+        <img src="img/xbox-1.webp" alt="Xbox" class="product-image">
+        <button class="nav-arrow right">→</button>
+      </div>
+      <div class="product-title">Xbox Series X</div>
+      <div class="price">17.499₺</div>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+
+    <div class="product-card" data-images='["img/switch-1.webp", "img/switch-2.webp", "img/switch-3.webp"]' data-price="9899" data-name="Nintendo Switch">
+      <div class="product-image-container">
+        <button class="nav-arrow left">←</button>
+        <img src="img/switch-1.webp" alt="Switch" class="product-image">
+        <button class="nav-arrow right">→</button>
+      </div>
+      <div class="product-title">Nintendo Switch</div>
+      <div class="price">9.899₺</div>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+
+    <div class="product-card" data-images='["img/steamdeck-1.webp", "img/steamdeck-2.webp", "img/steamdeck-3.webp", "img/steamdeck-4.webp"]' data-price="14499" data-name="Steam Deck">
+      <div class="product-image-container">
+        <button class="nav-arrow left">←</button>
+        <img src="img/steamdeck-1.webp" alt="Steam Deck" class="product-image">
+        <button class="nav-arrow right">→</button>
+      </div>
+      <div class="product-title">Steam Deck</div>
+      <div class="price">14.499₺</div>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+    
+    <div class="product-card" data-images='["img/ps5-slim.webp", "img/ps5-slim2.webp", "img/ps5-slim3.webp"]' data-price="16999" data-name="PlayStation 5 Slim">
+      <div class="product-image-container">
+        <button class="nav-arrow left">←</button>
+        <img src="img/ps5-slim.webp" alt="PS5 Slim" class="product-image">
+        <button class="nav-arrow right">→</button>
+      </div>
+      <div class="product-title">PlayStation 5 Slim</div>
+      <div class="price">16.999₺</div>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+    
+    <div class="product-card" data-images='["img/xbox-s.webp", "img/xbox-s2.webp", "img/xbox-s3.webp", "img/xbox-s4.webp"]' data-price="12499" data-name="Xbox Series S">
+      <div class="product-image-container">
+        <button class="nav-arrow left">←</button>
+        <img src="img/xbox-s.webp" alt="Xbox Series S" class="product-image">
+        <button class="nav-arrow right">→</button>
+      </div>
+      <div class="product-title">Xbox Series S</div>
+      <div class="price">12.499₺</div>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+
+    <!-- KONSOL OYUNLARI -->
+    <div class="product-card" data-images='["img/mc-kapak.webp", "img/mc-1.webp", "img/mc-2.webp", "img/mc 3.webp"]' data-price="1799" data-name="Minecraft">
+      <div class="product-image-container">
+        <button class="nav-arrow left">←</button>
+        <img src="img/mc-kapak.webp" alt="Minecraft" class="product-image">
+        <button class="nav-arrow right">→</button>
+      </div>
+      <div class="product-title">Minecraft (PS5)</div>
+      <div class="price">1.799₺</div>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+
+    <div class="product-card" data-images='["img/godkapak.webp", "img/god1.webp", "img/god2.webp"]' data-price="1699" data-name="God of War Ragnarok">
+      <div class="product-image-container">
+        <button class="nav-arrow left">←</button>
+        <img src="img/godkapak.webp" alt="God of War Ragnarok" class="product-image">
+        <button class="nav-arrow right">→</button>
+      </div>
+      <div class="product-title">God of War Ragnarok (PS5)</div>
+      <div class="price">1.699₺</div>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+    <div class="product-card" data-images='["img/fc 25 KAPAK.webp", "img/fc 25 1.webp", "img/FC 25 2.webp", "img/fc 25 3.webp"]' data-price="1599" data-name="EA FC 25 (PS5)">
+      <div class="product-image-container">
+        <button class="nav-arrow left">←</button>
+        <img src="img/fc 25 KAPAK.webp" alt="EA FC 25 (PS5)" class="product-image">
+        <button class="nav-arrow right">→</button>
+      </div>
+      <div class="product-title">EA FC 25 (PS5)</div>
+      <div class="price">1.599₺</div>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+
+    <div class="product-card" data-images='["img/Unc kapak.webp", "img/unc 1.webp", "img/unc 2.webp", "img/unc 3.webp"]' data-price="1699" data-name="Uncharted Legacy of Thieves Collection (PS5)">
+      <div class="product-image-container">
+        <button class="nav-arrow left">←</button>
+        <img src="img/starfield.webp" alt="Uncharted Legacy of Thieves Collection (PS5)" class="product-image">
+        <button class="nav-arrow right">→</button>
+      </div>
+      <div class="product-title">Uncharted Legacy of Thieves Collection (PS5)</div>
+      <div class="price">1.699₺</div>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+
+    <div class="product-card" data-images='["img/BF kapak.webp", "img/BF 1.webp", "img/BF 2.webp", "img/BF 3.webp"]' data-price="1499" data-name="Aral Battlefield 2042 (PS5)">
+      <div class="product-image-container">
+        <button class="nav-arrow left">←</button>
+        <img src="img/hogwarts.webp" alt="Aral Battlefield 2042 (PS5)" class="product-image">
+        <button class="nav-arrow right">→</button>
+      </div>
+      <div class="product-title">Aral Battlefield 2042 (PS5)</div>
+      <div class="price">1.499₺</div>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+    
+    <div class="product-card" data-images='["img/Footbal Manager.webp"]' data-price="1299" data-name="Footbal Manager (PS5)">
+      <div class="product-image-container">
+        <img src="img/Footbal Manager.webp" alt="Footbal Manager (PS5)" class="product-image">
+      </div>
+      <div class="product-title">Footbal Manager (PS5)</div>
+      <div class="price">1.299₺</div>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+    
+    <div class="product-card" data-images='["img/GTA V kapak.webp",]' data-price="1399" data-name="GTA V (PS5)">
+      <div class="product-image-container">
+        <img src="img/GTA V kapak.webp" alt="GTA V (PS5)" class="product-image">
+      </div>
+      <div class="product-title">GTA V (PS5)</div>
+      <div class="price">1.399₺</div>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+    
+    <div class="product-card" data-images='["img/Nba kapak.webp"]' data-price="1599" data-name="NBA (PS5)">
+      <div class="product-image-container">
+        <img src="img/Nba kapak.webp" alt="NBA (PS5)" class="product-image">
+      </div>
+      <div class="product-title">NBA (PS5)</div>
+      <div class="price">1.599₺</div>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+    
+    <!-- KONSOL EKİPMANLARI -->
+    <div class="product-card" data-images='["img/ps5-controller.webp", "img/ps5-controller-2.webp", "img/ps5-controller-3.webp"]' data-price="1499" data-name="PlayStation 5 DualSense Controller">
+      <div class="product-image-container">
+        <button class="nav-arrow left">←</button>
+        <img src="img/ps5-controller.webp" alt="PS5 Controller" class="product-image">
+        <button class="nav-arrow right">→</button>
+      </div>
+      <div class="product-title">PlayStation 5 DualSense Controller</div>
+      <div class="price">1.499₺</div>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+
+    <div class="product-card" data-images='["img/xbox-controller.webp", "img/xbox-controller-2.webp", "img/xbox-controller-3.webp"]' data-price="1399" data-name="Xbox Series X Controller">
+      <div class="product-image-container">
+        <button class="nav-arrow left">←</button>
+        <img src="img/xbox-controller.webp" alt="Xbox Controller" class="product-image">
+        <button class="nav-arrow right">→</button>
+      </div>
+      <div class="product-title">Xbox Series X Controller</div>
+      <div class="price">1.399₺</div>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+
+    <div class="product-card" data-images='["img/ps5-headset.webp", "img/ps5-headset-2.webp", "img/ps5-headset-3.webp"]' data-price="2499" data-name="PlayStation 5 Pulse 3D Wireless Headset">
+      <div class="product-image-container">
+        <button class="nav-arrow left">←</button>
+        <img src="img/ps5-headset.webp" alt="PS5 Headset" class="product-image">
+        <button class="nav-arrow right">→</button>
+      </div>
+      <div class="product-title">PlayStation 5 Pulse 3D Wireless Headset</div>
+      <div class="price">2.499₺</div>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+
+    <div class="product-card" data-images='["img/ps5-charging.webp", "img/ps5-charging-2.webp", "img/ps5-charging-3.webp"]' data-price="699" data-name="PlayStation 5 DualSense Charging Station">
+      <div class="product-image-container">
+        <button class="nav-arrow left">←</button>
+        <img src="img/ps5-charging.webp" alt="PS5 Charging Station" class="product-image">
+        <button class="nav-arrow right">→</button>
+      </div>
+      <div class="product-title">PlayStation 5 DualSense Charging Station</div>
+      <div class="price">699₺</div>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+
+    <div class="product-card" data-images='["img/xbox-headset.webp", "img/xbox-headset-2.webp", "img/xbox-headset-3.webp", "img/xbox-headset-4.webp"]' data-price="1999" data-name="Xbox Wireless Headset">
+      <div class="product-image-container">
+        <button class="nav-arrow left">←</button>
+        <img src="img/xbox-headset.webp" alt="Xbox Headset" class="product-image">
+        <button class="nav-arrow right">→</button>
+      </div>
+      <div class="product-title">Xbox Wireless Headset</div>
+      <div class="price">7.999₺</div>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+
+    <div class="product-card" data-images='["img/switch-pro.webp", "img/switch-pro-2.webp"]' data-price="1299" data-name="Nintendo Switch Pro Controller">
+      <div class="product-image-container">
+        <button class="nav-arrow left">←</button>
+        <img src="img/switch-pro.webp" alt="Switch Pro Controller" class="product-image">
+        <button class="nav-arrow right">→</button>
+      </div>
+      <div class="product-title">Nintendo Switch Pro Controller</div>
+      <div class="price">1.299₺</div>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+    
+    <div class="product-card" data-images='["img/ps5-camera.webp"]' data-price="899" data-name="PlayStation 5 HD Camera">
+      <div class="product-image-container">
+        <img src="img/ps5-camera.webp" alt="PS5 Camera" class="product-image">
+      </div>
+      <div class="product-title">PlayStation 5 HD Camera</div>
+      <div class="price">899₺</div>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+
+    <div class="product-card" data-images='["img/xbox-storage.jpg", "img/xbox-storage-2.jpg", "img/xbox-storage-3.jpg"]' data-price="3499" data-name="Xbox Series X Seagate Storage Expansion Card">
+      <div class="product-image-container">
+        <button class="nav-arrow left">←</button>
+        <img src="img/xbox-storage.webp" alt="Xbox Storage" class="product-image">
+        <button class="nav-arrow right">→</button>
+      </div>
+      <div class="product-title">Xbox Series X Seagate Storage Expansion Card</div>
+      <div class="price">3.499₺</div>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+      <div class="product-card" data-images='["img/hazir1.jpg", "img/hazir1-1.jpg", "img/hazir1-2.jpg"]' data-price="29999" data-name="Gaming PC RTX 4070 Ti">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/hazir1.jpg" alt="Gaming PC RTX 4070 Ti" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">Gaming PC RTX 4070 Ti</div>
+        <div class="product-specs">Intel i9-13900K, 32GB RAM, 2TB SSD</div>
+        <div class="price">29.999₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+
+      <div class="product-card" data-images='["img/hazir2.jpg", "img/hazir2-1.jpg", "img/hazir2-2.jpg"]' data-price="19999" data-name="Gaming PC RTX 4060">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/hazir2.jpg" alt="Gaming PC RTX 4060" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">Gaming PC RTX 4060</div>
+        <div class="product-specs">AMD Ryzen 7 7800X, 16GB RAM, 1TB SSD</div>
+        <div class="price">19.999₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+      
+      <div class="product-card" data-images='["img/hazir3.jpg", "img/hazir3-1.jpg", "img/hazir3-2.jpg"]' data-price="15999" data-name="Gaming PC RTX 3060 Ti">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/hazir3.jpg" alt="Gaming PC RTX 3060 Ti" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">Gaming PC RTX 3060 Ti</div>
+        <div class="product-specs">Intel i5-13600K, 16GB RAM, 1TB SSD</div>
+        <div class="price">15.999₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+
+      <div class="product-card" data-images='["img/hazir4.jpg", "img/hazir4-1.jpg", "img/hazir4-2.jpg"]' data-price="12999" data-name="Gaming PC RTX 3050">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/hazir4.jpg" alt="Gaming PC RTX 3050" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">Gaming PC RTX 3050</div>
+        <div class="product-specs">AMD Ryzen 5 5600X, 16GB RAM, 512GB SSD</div>
+        <div class="price">12.999₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+
+      <div class="product-card" data-images='["img/hazir5.jpg", "img/hazir5-1.jpg", "img/hazir5-2.jpg"]' data-price="9999" data-name="Ofis PC">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/hazir5.jpg" alt="Ofis PC" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">Ofis PC</div>
+        <div class="product-specs">Intel i3-12100, 8GB RAM, 256GB SSD</div>
+        <div class="price">9.999₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+      
+      <div class="product-card" data-images='["img/hazir6.jpg"]' data-price="39999" data-name="Profesyonel İş İstasyonu">
+        <div class="product-image-container">
+          <img src="img/hazir6.jpg" alt="Profesyonel İş İstasyonu" class="product-image">
+        </div>
+        <div class="product-title">Profesyonel İş İstasyonu</div>
+        <div class="product-specs">Intel i9-13900K, RTX 4090, 64GB RAM, 4TB SSD</div>
+        <div class="price">39.999₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+
+      <div class="product-card" data-images='["img/hazir7.jpg", "img/hazir7-1.jpg", "img/hazir7-2.jpg"]' data-price="12999" data-name="Gaming PC RTX 3050">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/hazir7.jpg" alt="Gaming PC RTX 3050" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">Gaming PC RTX 4060</div>
+        <div class="product-specs">İntel i5, 16GB RAM, 512GB SSD</div>
+        <div class="price">18.999₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+
+      <div class="product-card" data-images='["img/laptop1.jpg", "img/laptop1-1.jpg", "img/laptop1-2.jpg"]' data-price="34999" data-name="MSI Raider GE78 HX">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/laptop1.jpg" alt="MSI Raider GE78 HX" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">MSI Raider GE78 HX</div>
+        <div class="product-specs">Intel i9-13980HX, RTX 4090, 32GB RAM, 2TB SSD, 17" QHD 240Hz</div>
+        <div class="price">34.999₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+
+      <div class="product-card" data-images='["img/laptop2.jpg", "img/laptop2-1.jpg", "img/laptop2-2.jpg"]' data-price="24999" data-name="ASUS ROG Strix G16">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/laptop2.jpg" alt="ASUS ROG Strix G16" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">ASUS ROG Strix G16</div>
+        <div class="product-specs">Intel i7-13650HX, RTX 4070, 16GB RAM, 1TB SSD, 16" QHD 165Hz</div>
+        <div class="price">24.999₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+      
+      <div class="product-card" data-images='["img/laptop3.jpg", "img/laptop3-1.jpg", "img/laptop3-2.jpg"]' data-price="19999" data-name="Lenovo YOGA">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/laptop3.jpg" alt="Lenovo YOGA" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">Lenovo YOGA</div>
+        <div class="product-specs">AMD Ryzen 7 7745HX, RTX 4060, 16GB RAM, 1TB SSD, 16" QHD 165Hz</div>
+        <div class="price">19.999₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+
+      <div class="product-card" data-images='["img/laptop4.jpg", "img/laptop4-1.jpg", "img/laptop4-2.jpg"]' data-price="14999" data-name="HP Victus 16">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/laptop4.jpg" alt="HP Victus 16" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">HP Victus 16</div>
+        <div class="product-specs">Intel i5-13500H, RTX 3050, 16GB RAM, 512GB SSD, 16" FHD 144Hz</div>
+        <div class="price">14.999₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+
+      <div class="product-card" data-images='["img/laptop5.jpg", "img/laptop5-1.jpg", "img/laptop5-2.jpg"]' data-price="9999" data-name="Acer Aspire 5">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/laptop5.jpg" alt="Acer Aspire 5" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">Acer Aspire 5</div>
+        <div class="product-specs">Intel i5-1235U, Iris Xe Graphics, 8GB RAM, 512GB SSD, 15.6" FHD</div>
+        <div class="price">9.999₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+      
+      <div class="product-card" data-images='["img/laptop6.jpg", "img/laptop6-1.jpg", "img/laptop6-2.jpg"]' data-price="7999" data-name="Lenovo IdeaPad 3">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/laptop6.jpg" alt="Lenovo IdeaPad 3" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">Lenovo IdeaPad 3</div>
+        <div class="product-specs">AMD Ryzen 5 5500U, Radeon Graphics, 8GB RAM, 256GB SSD, 15.6" FHD</div>
+        <div class="price">7.999₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+        <div class="product-card" data-images='["img/monitör1.webp", "img/monitör1-1.webp", "img/monitör1-2.webp"]' data-price="12999" data-name="Samsung Odyssey G9">
+          <div class="product-image-container">
+            <button class="nav-arrow left">←</button>
+            <img src="img/monitör1.webp" alt="Samsung Odyssey G9" class="product-image">
+            <button class="nav-arrow right">→</button>
+          </div>
+          <div class="product-title">Samsung Odyssey G9</div>
+          <div class="product-specs">49" QLED, 5120x1440, 240Hz, 1ms, G-Sync, HDR1000</div>
+          <div class="price">12.999₺</div>
+          <button class="add-to-cart">Sepete Ekle</button>
+        </div>
+  
+        <div class="product-card" data-images='["img/monitör2.webp", "img/monitör2-1.webp", "img/monitör2-2.webp"]' data-price="8999" data-name="LG UltraGear 34GN850">
+          <div class="product-image-container">
+            <button class="nav-arrow left">←</button>
+            <img src="img/monitör2.webp" alt="LG UltraGear 34GN850" class="product-image">
+            <button class="nav-arrow right">→</button>
+          </div>
+          <div class="product-title">LG UltraGear 34GN850</div>
+          <div class="product-specs">34" Nano IPS, 3440x1440, 160Hz, 1ms, G-Sync, HDR400</div>
+          <div class="price">8.999₺</div>
+          <button class="add-to-cart">Sepete Ekle</button>
+        </div>
+        
+        <div class="product-card" data-images='["img/monitör3.webp", "img/monitör3-1.webp", "img/monitör3-2.webp"]' data-price="5999" data-name="ASUS TUF Gaming VG27AQ">
+          <div class="product-image-container">
+            <button class="nav-arrow left">←</button>
+            <img src="img/monitör3.webp" alt="ASUS TUF Gaming VG27AQ" class="product-image">
+            <button class="nav-arrow right">→</button>
+          </div>
+          <div class="product-title">ASUS TUF Gaming VG27AQ</div>
+          <div class="product-specs">27" IPS, 2560x1440, 165Hz, 1ms, G-Sync, HDR10</div>
+          <div class="price">5.999₺</div>
+          <button class="add-to-cart">Sepete Ekle</button>
+        </div>
+  
+        <div class="product-card" data-images='["img/monitör4.webp", "img/monitör4-1.webp", "img/monitör4-2.webp"]' data-price="3999" data-name="MSI Optix G273QF">
+          <div class="product-image-container">
+            <button class="nav-arrow left">←</button>
+            <img src="img/monitör4.webp" alt="MSI Optix G273QF" class="product-image">
+            <button class="nav-arrow right">→</button>
+          </div>
+          <div class="product-title">MSI Optix G273QF</div>
+          <div class="product-specs">27" IPS, 2560x1440, 165Hz, 1ms, G-Sync</div>
+          <div class="price">3.999₺</div>
+          <button class="add-to-cart">Sepete Ekle</button>
+        </div>
+  
+        <div class="product-card" data-images='["img/monitör5.webp", "img/monitör5-1.webp", "img/monitör5-2.webp"]' data-price="2499" data-name="AOC 24G2U">
+          <div class="product-image-container">
+            <button class="nav-arrow left">←</button>
+            <img src="img/monitör5.webp" alt="AOC 24G2U" class="product-image">
+            <button class="nav-arrow right">→</button>
+          </div>
+          <div class="product-title">AOC 24G2U</div>
+          <div class="product-specs">24" IPS, 1920x1080, 144Hz, 1ms, FreeSync</div>
+          <div class="price">2.499₺</div>
+          <button class="add-to-cart">Sepete Ekle</button>
+        </div>
+        
+        <div class="product-card" data-images='["img/monitör6.webp", "img/monitör6-1.webp", "img/monitör6-2.webp"]' data-price="1999" data-name="Samsung F24T350">
+          <div class="product-image-container">
+            <button class="nav-arrow left">←</button>
+            <img src="img/monitör6.webp" alt="Samsung F24T350" class="product-image">
+            <button class="nav-arrow right">→</button>
+          </div>
+          <div class="product-title">Samsung F24T350</div>
+          <div class="product-specs">24" IPS, 1920x1080, 75Hz, 5ms, FreeSync</div>
+          <div class="price">1.999₺</div>
+          <button class="add-to-cart">Sepete Ekle</button>
+        </div>
+        <div class="product-card" data-images='["img/ekrankart1.jpg", "img/ekrankart1-1.jpg", "img/ekrankart1-2.jpg"]' data-price="39999" data-name="NVIDIA GeForce RTX 4090">
+          <div class="product-image-container">
+            <button class="nav-arrow left">←</button>
+            <img src="img/ekrankart1.jpg" alt="NVIDIA GeForce RTX 4090" class="product-image">
+            <button class="nav-arrow right">→</button>
+          </div>
+          <div class="product-title">NVIDIA GeForce RTX 4090</div>
+          <div class="product-specs">24GB GDDR6X, 16384 CUDA, PCIe 4.0</div>
+          <div class="price">39.999₺</div>
+          <button class="add-to-cart">Sepete Ekle</button>
+        </div>
+  
+        <div class="product-card" data-images='["img/ekrankart2.webp", "img/ekrankart2-1.webp", "img/ekrankart2-2.webp"]' data-price="24999" data-name="NVIDIA GeForce RTX 4080">
+          <div class="product-image-container">
+            <button class="nav-arrow left">←</button>
+            <img src="img/ekrankart2.webp" alt="NVIDIA GeForce RTX 4080" class="product-image">
+            <button class="nav-arrow right">→</button>
+          </div>
+          <div class="product-title">NVIDIA GeForce RTX 4080</div>
+          <div class="product-specs">16GB GDDR6X, 9728 CUDA, PCIe 4.0</div>
+          <div class="price">24.999₺</div>
+          <button class="add-to-cart">Sepete Ekle</button>
+        </div>
+        
+        <div class="product-card" data-images='["img/ekrankart3.jpg", "img/ekrankart3-1.jpg", "img/ekrankart3-2.jpg"]' data-price="17999" data-name="AMD Radeon RX 7900 XTX">
+          <div class="product-image-container">
+            <button class="nav-arrow left">←</button>
+            <img src="img/ekrankart3.jpg" alt="AMD Radeon RX 7900 XTX" class="product-image">
+            <button class="nav-arrow right">→</button>
+          </div>
+          <div class="product-title">AMD Radeon RX 7900 XTX</div>
+          <div class="product-specs">24GB GDDR6, 12288 Stream Processors, PCIe 4.0</div>
+          <div class="price">17.999₺</div>
+          <button class="add-to-cart">Sepete Ekle</button>
+        </div>
+  
+        <div class="product-card" data-images='["img/ekrankart4.jpg", "img/ekrankart4-1.jpg", "img/ekrankart4-2.jpg"]' data-price="12999" data-name="NVIDIA GeForce RTX 4070 Ti">
+          <div class="product-image-container">
+            <button class="nav-arrow left">←</button>
+            <img src="img/ekrankart4.jpg" alt="NVIDIA GeForce RTX 4070 Ti" class="product-image">
+            <button class="nav-arrow right">→</button>
+          </div>
+          <div class="product-title">NVIDIA GeForce RTX 4070 Ti</div>
+          <div class="product-specs">12GB GDDR6X, 7680 CUDA, PCIe 4.0</div>
+          <div class="price">12.999₺</div>
+          <button class="add-to-cart">Sepete Ekle</button>
+        </div>
+  
+        <div class="product-card" data-images='["img/ekrankart5.jpg", "img/ekrankart5-1.jpg", "img/ekrankart5-2.jpg"]' data-price="8999" data-name="NVIDIA GeForce RTX 4060 Ti">
+          <div class="product-image-container">
+            <button class="nav-arrow left">←</button>
+            <img src="img/ekrankart5.jpg" alt="NVIDIA GeForce RTX 4060 Ti" class="product-image">
+            <button class="nav-arrow right">→</button>
+          </div>
+          <div class="product-title">NVIDIA GeForce RTX 4060 Ti</div>
+          <div class="product-specs">8GB GDDR6, 4352 CUDA, PCIe 4.0</div>
+          <div class="price">8.999₺</div>
+          <button class="add-to-cart">Sepete Ekle</button>
+        </div>
+        
+        <div class="product-card" data-images='["img/ekrankart6.jpg", "img/ekrankart6-1.jpg", "img/ekrankart6-2.jpg"]' data-price="5999" data-name="AMD Radeon RX 6600 XT">
+          <div class="product-image-container">
+            <button class="nav-arrow left">←</button>
+            <img src="img/ekrankart6.jpg" alt="AMD Radeon RX 6600 XT" class="product-image">
+            <button class="nav-arrow right">→</button>
+          </div>
+          <div class="product-title">AMD Radeon RX 6600 XT</div>
+          <div class="product-specs">12GB GDDR6, 2560 Stream Processors, PCIe 4.0</div>
+          <div class="price">5.999₺</div>
+          <button class="add-to-cart">Sepete Ekle</button>
+        </div>
+  
+        <div class="product-card" data-images='["img/ekrankart7.jpg", "img/ekrankart7-1.jpg", "img/ekrankart7-2.jpg"]' data-price="5999" data-name="NVIDIA GeForce RTX 5070 Ti">
+          <div class="product-image-container">
+            <button class="nav-arrow left">←</button>
+            <img src="img/ekrankart7.jpg" alt="NVIDIA GeForce RTX 5070 Ti" class="product-image">
+            <button class="nav-arrow right">→</button>
+          </div>
+          <div class="product-title">NVIDIA GeForce RTX 5070 Ti</div>
+          <div class="product-specs">16GB GDDR6, GDDR7, PCIe 5.0</div>
+          <div class="price">5.999₺</div>
+          <button class="add-to-cart">Sepete Ekle</button>
+        </div>
+
+      <div class="product-card" data-images='["img/anakart1-1.webp", "img/anakart1.webp", "img/anakart1-2.webp"]' data-price="8999" data-name="ASUS ROG Maximus Z790 Hero">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/anakart1-1.webp" alt="ASUS ROG Maximus Z790 Hero" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">ASUS ROG Maximus Z890 Hero</div>
+        <div class="product-specs">Intel Z890, LGA 1700, DDR5, PCIe 5.0, ATX</div>
+        <div class="price">8.999₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+  
+      <div class="product-card" data-images='["img/anakart2.webp", "img/anakart2-1.webp", "img/anakart2-2.webp"]' data-price="6999" data-name="MSI MEG X670E ACE">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/anakart2.webp" alt="MSI MEG X670E ACE" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">MSI A520M-A PRO</div>
+        <div class="product-specs">AMD X670E, AM5, DDR4, PCIe 5.0, ATX</div>
+        <div class="price">6.999₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+      
+      <div class="product-card" data-images='["img/anakart3.jpg", "img/anakart3-1.jpg", "img/anakart3-2.jpg"]' data-price="4999" data-name="Gigabyte Z790 AORUS Elite AX">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/anakart3.jpg" alt="Gigabyte Z790 AORUS Elite AX" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">Gigabyte Z790 AORUS Elite AX</div>
+        <div class="product-specs">Intel Z790, LGA 1700, DDR5, PCIe 5.0, ATX</div>
+        <div class="price">4.999₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+  
+      <div class="product-card" data-images='["img/anakart4.webp", "img/anakart4-1.webp", "img/anakart4-2.webp"]' data-price="3499" data-name="ASUS TUF Gaming B650-PLUS">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/anakart4.webp" alt="ASUS TUF Gaming B650-PLUS" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">ASUS TUF Gaming B650-PLUS</div>
+        <div class="product-specs">AMD B650, AM5, DDR5, PCIe 4.0, ATX</div>
+        <div class="price">3.499₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+  
+      <div class="product-card" data-images='["img/anakart5.jpg", "img/anakart5-1.jpg", "img/anakart5-2.jpg"]' data-price="2499" data-name="MSI PRO B760M-A">
+        <div class="product-image-container">
+          <button class="nav-arrow left">←</button>
+          <img src="img/anakart5.jpg" alt="MSI PRO B760M-A" class="product-image">
+          <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">MSI PRO B760M-P</div>
+        <div class="product-specs">Intel B760, LGA 1700, DDR4, PCIe 4.0, Micro-ATX</div>
+        <div class="price">2.499₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+      
+      <div class="product-card" data-images='["img/anakart6.jpg", "img/anakart6-1.jpg", "img/anakart6-2.jpg"]' data-price="1999" data-name="Gigabyte B550M DS3H">
+        <div class="product-image-container">
+            <button class="nav-arrow left">←</button>
+            <img src="img/anakart6.jpg" alt="Gigabyte B550M DS3H" class="product-image">
+            <button class="nav-arrow right">→</button>
+        </div>
+        <div class="product-title">Gigabyte B550M DS3H</div>
+        <div class="product-specs">AMD B550, AM4, DDR4, PCIe 4.0, Micro-ATX</div>
+        <div class="price">1.999₺</div>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+    
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>Joystix Zone</h3>
+      <p>Türkiye'nin en büyük oyun ekipmanları ve konsol mağazası. En yeni ürünleri en uygun fiyatlarla sunuyoruz.</p>
+      <div class="social-icons">
+        <a href="#" class="social-icon">📱</a>
+        <a href="#" class="social-icon">📘</a>
+        <a href="#" class="social-icon">📸</a>
+        <a href="#" class="social-icon">📺</a>
+      </div>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Hızlı Erişim</h3>
+      <ul class="footer-links">
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="konsollar.html">Konsollar</a></li>
+        <li><a href="konsoloyun.html">Konsol Oyunları</a></li>
+        <li><a href="konsolekipman.html">Konsol Ekipmanları</a></li>
+        <li><a href="hakkımızda.html">Hakkımızda</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Müşteri Hizmetleri</h3>
+      <ul class="footer-links">
+        <li><a href="#">Sıkça Sorulan Sorular</a></li>
+        <li><a href="#">Kargo ve Teslimat</a></li>
+        <li><a href="#">İade ve Değişim</a></li>
+        <li><a href="#">Gizlilik Politikası</a></li>
+        <li><a href="#">Kullanım Koşulları</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h3>İletişim</h3>
+      <p>📍 Teknoloji Caddesi No:123, İstanbul</p>
+      <p>📞 0212 123 45 67</p>
+      <p>✉️ info@joystixzone.com</p>
+      <div class="payment-methods">
+        <span class="payment-icon">💳</span>
+        <span class="payment-icon">💰</span>
+        <span class="payment-icon">🏦</span>
+        <span class="payment-icon">💵</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; 2023 Joystix Zone. Tüm hakları saklıdır.</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
